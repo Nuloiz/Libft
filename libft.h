@@ -29,6 +29,7 @@ int		ft_memcmp(void *s1, void *s2, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memset(void *b, int c, size_t len);
+void	ft_putchar_fd(char c, int fd);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(char *s);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
