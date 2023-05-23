@@ -21,10 +21,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s)
 		return (ft_strdup(""));
-	if (len > ft_strlen(s + start))
-		len = ft_strlen(s + start);
 	if (start >= (unsigned int)ft_strlen(s))
 		return ((char *)ft_calloc(1, 1));
+	if (len > ft_strlen(s + start))
+		len = ft_strlen(s + start);
 	ptr = (char *)ft_calloc(len + 1, 1);
 	if (ptr == NULL)
 		return (0);
