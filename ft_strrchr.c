@@ -22,7 +22,7 @@ char	*ft_strrchr(const char *s, int c)
 	if (ft_isascii(i) == 0)
 		return (0);
 	mem = (char *)s;
-	len = ft_strlen(s);
+	len = (int)ft_strlen(s);
 	while (len >= 0)
 	{
 		if (mem[len] == i)
