@@ -12,25 +12,42 @@
 
 #include "libft.h"
 
-char	ft_strstr(const char *haystack, const char *needle)
+int	ft_found(const char *hay, const char *need, int len, int j)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	j = 0;
-	if (needle[0] == '\0')
-		return (0);
-	while ((haystack[i] != needle[0]) && (haystack[i] != '\0'))
+	while (need[i])
 	{
-		i++;
-	}
-	while ((needle[j] != '\0') && (haystack[i] != '\0'))
-	{
-		if (haystack[i] != needle[j])
+		if (need[i] != hay[i] || j == len)
 			return (0);
 		i++;
 		j++;
 	}
-	return (haystack[i] - ft_strlen(needle));
+	return (1);
+}
+
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+{
+	int	i;
+
+	i = 0;
+	if (!needle[0])
+		return ((char *)haystack);
+	if (!haystack[0])
+		return (0);
+	if ((int)len < 0)
+		len = 65535;
+	while (haystack[i] && i < (int)len)
+	{
+		if (haystack [i] == needle[0])
+		{
+			if (ft_found(&haystack[i], needle, (int)len, i))
+				return ((char *)&haystack[i]);
+		}
+		i++;
+	}
+	if ((int)len == i)
+		return (0);
+	return (0);
 }
