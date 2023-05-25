@@ -50,7 +50,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	{
 		i++;
 	}
-	if (i >= ft_strlenend(s1, set, ft_strlen(s1) - i))
+	if (i >= ft_strlenend(s1, set, ft_strlen(s1) - i) || !*s1)
 		return (ft_strdup(""));
 	cpy = (char *)ft_calloc(ft_strlenend(s1, set, ft_strlen(s1)) - i + 1, 1);
 	if (!cpy)
