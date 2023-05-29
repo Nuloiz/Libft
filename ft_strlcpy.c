@@ -15,18 +15,20 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	s;
+	size_t	i;
 
 	s = 0;
+	i = ft_strlen(src);
 	if (dstsize == 0)
 	{
-		return (ft_strlen(src));
+		return (i);
 	}
-	while (s < ft_strlen(src) && (dstsize) > 1)
+	while (s < i && (dstsize) > 1)
 	{
 		dst[s] = src[s];
 		s++;
 		dstsize--;
 	}
 	dst[s] = '\0';
-	return (ft_strlen(src));
+	return (i);
 }
